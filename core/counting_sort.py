@@ -9,23 +9,22 @@ class CountingSort:
         alpha_range = self._ENG_ALPH_LETTERS
         array_len = len(array)
 
-        # Step #1: ?
-        count = [0] * alpha_range
+        initial_array = [0] * alpha_range
         result = [''] * array_len
 
         # Step #2: Counting the number of occurrences of each k-th character
         for word in array:
             index = ord(word[k]) - ord('a')
-            count[index] += 1
+            initial_array[index] += 1
 
         # Step #3: Calculation of the cumulative sum
         for i in range(1, alpha_range):
-            count[i] += count[i - 1]
+            initial_array[i] += initial_array[i - 1]
 
         # Step #4: Creating a sorted array
         for word in reversed(array):
             index = ord(word[k]) - ord('a')
-            result[count[index] - 1] = word
-            count[index] -= 1
+            result[initial_array[index] - 1] = word
+            initial_array[index] -= 1
 
         return result
