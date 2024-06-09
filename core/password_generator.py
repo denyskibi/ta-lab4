@@ -20,6 +20,13 @@ class PasswordGenerator:
         # Step #2: Finding the most common letter among all anagrams
         most_common_letter = self._found_most_common_latter(anagrams)
 
+        # Step #3: Create password
+        first_element_of_sorted_anagrams = sorted_anagrams[0]
+        last_element_of_sorted_anagrams = sorted_anagrams[-1]
+        generated_password = first_element_of_sorted_anagrams + most_common_letter + last_element_of_sorted_anagrams
+
+        return generated_password
+
     @staticmethod
     def _found_most_common_latter(anagrams: List[str]) -> str:
         anagrams_str = ''.join(anagrams)  # merging anagrams to one string
