@@ -30,5 +30,11 @@ class PasswordGenerator:
     @staticmethod
     def _found_most_common_latter(anagrams: List[str]) -> str:
         anagrams_str = ''.join(anagrams)  # merging anagrams to one string
-        most_common_latter = Counter(anagrams_str).most_common(1)[0][0]
-        return most_common_latter
+
+        # most_common_latter = Counter(anagrams_str).most_common(1)[0][0]
+        letters_occurrences_counter = Counter(anagrams_str)
+        most_common_list = letters_occurrences_counter.most_common(1)
+        most_common_tuple = most_common_list[0]
+        most_common_character = most_common_tuple[0]
+
+        return most_common_character
