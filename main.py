@@ -19,8 +19,11 @@ def main():
         # Step #1: Load anagrams from file
         loaded_anagrams = file_utils.load_anagrams_from_txt_file(file_path="files/input_anagrams.txt")
 
-        # Step #2: Fetch & print password
+        # Step #1: Generate password
         generated_password = password_generator.generate_password(loaded_anagrams)
+
+        # Step #2: Print generated password
+        print(f"[INFO] Task #1 - Generated password from anagrams: {generated_password}")
     except KeyboardInterrupt:
         print("[ERROR] Failed: script interrupted by user (CTRL + C)")
         stop()
