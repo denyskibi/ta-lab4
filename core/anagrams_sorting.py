@@ -3,7 +3,6 @@ from typing import List, Tuple
 
 # Custom Modules
 from core.counting_sort import CountingSort
-from core.radix_sort import RadixSort
 
 
 class AnagramsSorting:
